@@ -100,13 +100,11 @@ Abaixo serão adicionadas capturas de tela da conversa com o ChatGPT, mostrando 
 
 ## Antes da Reestilização
 
-Nesta parte será mostrada uma captura de tela do sistema antes das mudanças no visual.
 
 ![Sistema antes da reestilização](docs/evidencias/Captura%20de%20tela%202026-10-28%20144348.png)
 
 ## Depois da Reestilização
 
-Nesta parte será mostrada uma captura de tela do sistema depois das alterações realizadas.
 
 ![Sistema depois da reestilização](docs/evidencias/Captura%20de%20tela%202026-10-28%20144405.png)
 
