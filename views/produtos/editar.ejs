@@ -1,0 +1,107 @@
+
+<%- include("../partials/header") %>
+<%- include("../partials/nav") %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+
+      <div class="card editar-card shadow-sm">
+
+        <div class="card-header editar-header">
+          <h4 class="mb-0">Editar Produto</h4>
+          <p class="mb-0 mt-1">Atualize as informações do produto</p>
+        </div>
+
+        <div class="card-body">
+
+          <form action="/produtos/editar/<%= produto.id %>" method="POST">
+
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nome"
+                name="nome"
+                placeholder="Digite o nome"
+                value="<%= produto.nome %>"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="descricao" class="form-label">Descrição</label>
+              <input
+                type="text"
+                class="form-control"
+                id="descricao"
+                name="descricao"
+                placeholder="Escreva a descrição"
+                value="<%= produto.descricao %>"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="preco" class="form-label">Preço (R$)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="preco"
+                name="preco"
+                placeholder="Digite o preço"
+                step="0.01"
+                min="0"
+                value="<%= produto.preco %>"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="estoque" class="form-label">Estoque</label>
+              <input
+                type="number"
+                class="form-control"
+                id="estoque"
+                name="estoque"
+                placeholder="Digite o estoque"
+                min="0"
+                step="1"
+                value="<%= produto.estoque %>"
+                required
+              />
+            </div>
+
+            <div class="mb-4">
+              <label for="categoria" class="form-label">Categoria</label>
+              <input
+                type="text"
+                class="form-control"
+                id="categoria"
+                name="categoria"
+                placeholder="Digite a categoria"
+                value="<%= produto.categoria %>"
+                required
+              />
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
+              <button type="submit" class="btn btn-editar">
+                Salvar alterações
+              </button>
+
+              <a href="/produtos" class="btn btn-cancelar">
+                Cancelar
+              </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%- include("../partials/footer") %>

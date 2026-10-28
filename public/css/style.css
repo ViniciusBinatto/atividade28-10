@@ -1,0 +1,538 @@
+
+:root {
+    --bg-main: #0b0d12;
+    --bg-sidebar: #10131b;
+    --bg-panel: #151923;
+    --bg-hover: #202534;
+    --accent: #8b5cf6;
+    --accent-hover: #7c3aed;
+    --text-main: #f1f5f9;
+    --text-muted: #929bad;
+    --border: #282e3c;
+    --success: #34d399;
+    --danger: #f87171;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: Inter, "Segoe UI", sans-serif;
+}
+
+.app-layout {
+    min-height: 100vh;
+}
+
+.sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1040;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 28px 18px 18px;
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 42px;
+    padding: 0 10px;
+    color: var(--text-main);
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.brand-icon {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--accent);
+    color: white;
+}
+
+.brand-highlight {
+    color: var(--accent);
+}
+
+.sidebar-label {
+    margin: 0 10px 12px;
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #aab2c2;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+}
+
+.sidebar-link:hover {
+    background: var(--bg-hover);
+    color: white;
+}
+
+.sidebar-link.active {
+    background: rgba(139, 92, 246, .15);
+    border-color: rgba(139, 92, 246, .2);
+    color: #c4b5fd;
+}
+
+.nav-icon {
+    display: inline-grid;
+    width: 24px;
+    place-items: center;
+    font-size: 20px;
+}
+
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: auto;
+    padding: 16px 10px 4px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    flex: 0 0 8px;
+    border-radius: 50%;
+    background: var(--success);
+}
+
+.main-area {
+    min-height: 100vh;
+    margin-left: 250px;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    min-height: 72px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 32px;
+    background: rgba(15, 18, 26, .92);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+.topbar-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.topbar-badge {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.page-content {
+    padding: 32px;
+}
+
+.menu-toggle {
+    display: none;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 7px 11px;
+    background: var(--bg-panel);
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar-overlay {
+    display: none;
+}
+
+/* Componentes Bootstrap */
+
+.card,
+.modal-content,
+.dropdown-menu {
+    background: var(--bg-panel);
+    color: var(--text-main);
+    border-color: var(--border);
+}
+
+.card {
+    border-radius: 14px;
+}
+
+.card-header,
+.card-footer {
+    background: var(--bg-panel);
+    border-color: var(--border);
+}
+
+p, label, .form-label {
+    color: var(--text-main);
+}
+
+.text-muted,
+.form-text {
+    color: var(--text-muted) !important;
+}
+
+.table {
+    --bs-table-bg: var(--bg-panel);
+    --bs-table-color: var(--text-main);
+    --bs-table-border-color: var(--border);
+    --bs-table-hover-bg: var(--bg-hover);
+    --bs-table-hover-color: var(--text-main);
+    margin-bottom: 0;
+}
+
+.table thead th {
+    color: var(--text-muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+}
+
+.form-control,
+.form-select {
+    min-height: 42px;
+    background-color: #10141d;
+    border-color: var(--border);
+    border-radius: 9px;
+    color: var(--text-main);
+}
+
+.form-control::placeholder {
+    color: #788195;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #10141d;
+    color: white;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, .17);
+}
+
+.form-select option {
+    background: var(--bg-panel);
+    color: var(--text-main);
+}
+
+.btn {
+    border-radius: 9px;
+    font-weight: 600;
+    transition: .2s ease;
+}
+
+.btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.btn-outline-secondary {
+    color: #cbd5e1;
+    border-color: #454d5e;
+}
+
+.btn-outline-secondary:hover {
+    background: var(--bg-hover);
+    color: white;
+    border-color: #626d82;
+}
+
+.alert {
+    border-radius: 10px;
+}
+
+a {
+    color: #b7a2ff;
+}
+
+a:hover {
+    color: #d0c4ff;
+}
+
+/* Layout responsivo */
+
+@media (max-width: 767px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+    }
+
+    body.sidebar-open .sidebar {
+        transform: translateX(0);
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1030;
+        background: rgba(0, 0, 0, .65);
+    }
+
+    body.sidebar-open .sidebar-overlay {
+        display: block;
+    }
+
+    .main-area {
+        margin-left: 0;
+    }
+
+    .topbar {
+        padding: 14px 16px;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+    }
+
+    .topbar-title {
+        flex: 1;
+    }
+
+    .topbar-badge {
+        display: none;
+    }
+
+    .page-content {
+        padding: 20px 14px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
+
+/* Cards da tela principal */
+.card {
+    background-color: #151923 !important;
+    color: #f1f5f9 !important;
+    border: 1px solid #2b3445 !important;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos e textos dentro dos cards */
+.card .card-title,
+.card .card-text,
+.card p,
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5 {
+    color: #f1f5f9 !important;
+}
+
+/* Cabeçalho e rodapé dos cards */
+.card .card-header,
+.card .card-footer {
+    background-color: #171d27 !important;
+    color: #5186bb !important;
+    border-color: #2b3445 !important;
+}
+
+css
+
+/* Cor de fundo da tabela escura */
+
+/* Tabela transparente */
+.table-dark {
+    --bs-table-bg: transparent;
+    --bs-table-color: #f1f5f9;
+    --bs-table-border-color: rgba(255, 255, 255, 0.12);
+    --bs-table-striped-bg: rgba(255, 255, 255, 0.03);
+    --bs-table-striped-color: #f1f5f9;
+    --bs-table-hover-bg: rgba(139, 92, 246, 0.10);
+    --bs-table-hover-color: #ffffff;
+}
+
+/* Células transparentes */
+.table-dark th,
+.table-dark td {
+    background-color: transparent !important;
+    color: #f1f5f9;
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Cabeçalho transparente com texto roxo */
+.table-dark thead th {
+    color: #c4b5fd;
+}
+
+
+/* Formulários de edição */
+form {
+    color: #f1f5f9;
+}
+
+form label,
+.form-label {
+    color: #e2e8f0;
+}
+
+form .form-control,
+form .form-select,
+form textarea {
+    background-color: #151923 !important;
+    color: #f1f5f9 !important;
+    border: 1px solid #343b4b !important;
+    border-radius: 9px;
+}
+
+form .form-control:focus,
+form .form-select:focus,
+form textarea:focus {
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2) !important;
+}
+
+form .form-control::placeholder {
+    color: #929bad !important;
+}
+
+form option {
+    background-color: #151923;
+    color: #f1f5f9;
+}
+
+/* Área do formulário */
+.card,
+.form-container {
+    background-color: #151923;
+    color: #f1f5f9;
+    border-color: #2b3445;
+}
+
+
+/* Formulário de edição de clientes */
+.editar-card {
+    background: #151923 !important;
+    color: #f1f5f9 !important;
+    border: 1px solid #2b3445 !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+}
+
+/* Cabeçalho do formulário */
+.editar-card .editar-header {
+    background: #1c2230 !important;
+    color: #c4b5fd !important;
+    border-bottom: 1px solid #2b3445 !important;
+    padding: 22px 24px;
+}
+
+.editar-header p {
+    color: #a5adbd !important;
+    font-size: 13px;
+}
+
+/* Área interna */
+.editar-card .card-body {
+    background: #151923 !important;
+    padding: 26px;
+}
+
+/* Rótulos */
+.editar-card .form-label {
+    display: block;
+    color: #e2e8f0 !important;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Campos */
+.editar-card .form-control {
+    background-color: #0f131c !important;
+    color: #f1f5f9 !important;
+    border: 1px solid #343b4b !important;
+    border-radius: 9px;
+    padding: 11px 13px;
+}
+
+.editar-card .form-control::placeholder {
+    color: #7e899c !important;
+}
+
+.editar-card .form-control:focus {
+    border-color: #8b5cf6 !important;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18) !important;
+}
+
+/* Botão salvar */
+.btn-editar {
+    background: #8b5cf6 !important;
+    color: #ffffff !important;
+    border: 1px solid #8b5cf6 !important;
+    border-radius: 9px;
+    padding: 10px 18px;
+}
+
+.btn-editar:hover {
+    background: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: #ffffff !important;
+}
+
+/* Botão cancelar */
+.btn-cancelar {
+    background: transparent !important;
+    color: #cbd5e1 !important;
+    border: 1px solid #454d5e !important;
+    border-radius: 9px;
+    padding: 10px 18px;
+}
+
+.btn-cancelar:hover {
+    background: #252d3d !important;
+    color: #ffffff !important;
+}
+
+@media (max-width: 576px) {
+    .editar-card .card-body {
+        padding: 18px;
+    }
+}

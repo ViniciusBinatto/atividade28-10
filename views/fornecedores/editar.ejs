@@ -1,0 +1,94 @@
+<%- include("../partials/header") %> <%- include("../partials/nav") %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">
+          <h4 class="mb-0">Editar Fornecedor</h4>
+        </div>
+
+        <div class="card-body">
+          <form action="" method="POST">
+  <!-- Campo Razão Social -->
+  <div class="mb-3">
+    <label for="razaoSocial" class="form-label">Nome / Razão Social</label>
+    <input
+      type="text"
+      class="form-control"
+      id="razaoSocial"
+      name="razaoSocial"
+      placeholder="Digite a razão social"
+      required 
+      value="<%= fornecedor.razaoSocial %>"
+    />
+  </div>
+
+  <!-- Campo CNPJ -->
+  <div class="mb-3">
+    <label for="cnpj" class="form-label">CNPJ</label>
+    <input
+      type="text"
+      class="form-control"
+      id="cnpj"
+      name="cnpj"
+      placeholder="Digite o CNPJ"
+      required
+      value="<%= fornecedor.cnpj %>"
+    />
+  </div>
+
+  <!-- Campo Email (Adicionado) -->
+  <div class="mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Digite o e-mail"
+      required
+      value="<%= fornecedor.email %>"
+    />
+  </div>
+
+  <!-- Campo Telefone -->
+  <div class="mb-3">
+    <label for="telefone" class="form-label">Telefone</label>
+    <input
+      type="text"
+      class="form-control"
+      id="telefone"
+      name="telefone"
+      placeholder="Digite o telefone"
+      required
+      value="<%= fornecedor.telefone %>"
+    />
+  </div>
+
+  <!-- Campo Cidade -->
+  <div class="mb-3">
+    <label for="cidade" class="form-label">Cidade</label>
+    <input
+      type="text"
+      class="form-control"
+      id="cidade"
+      name="cidade"
+      placeholder="Digite a cidade"
+      required
+      value="<%= fornecedor.cidade %>"
+    />
+  </div>
+
+  <div class="d-flex gap-2">
+    <button type="submit" class="btn btn-success">Editar</button>
+    <a href="/fornecedores" class="btn btn-secondary">Cancelar</a>
+  </div>
+</form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../partials/footer") %>
